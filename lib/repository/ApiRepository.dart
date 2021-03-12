@@ -1,13 +1,10 @@
 import 'package:bubblecafe/model/product/product.dart';
-import 'package:bubblecafe/repository/ApiProvider.dart';
+import '../service/ApiService.dart';
 
 class ApiRepository {
-  final ApiProvider _apiRepository = ApiProvider();
-  Future<ProductResponse> GetProduct() => _apiRepository.GETproductList();
-}
+  ApiService _apiRepository = ApiService();
 
-class RowProductRepository {
-  final ApiProvider _apiRepository = ApiProvider();
-  Future<List<Row>> GetAllProduct() => _apiRepository.GetAllProduct();
+  Future<ProductResponse> GetProduct() => _apiRepository.GetProductList();
+
 }
 

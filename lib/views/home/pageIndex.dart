@@ -5,7 +5,6 @@ import 'pageSpecialMenu.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../widgets/baseAppBar.dart';
 
-
 class PageIndex extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -186,6 +185,28 @@ Widget selectTypeSection(BuildContext context) {
         ],
       ),
     ),
+  );
+}
+
+Widget _buildPopupDialog(BuildContext context) {
+  return new AlertDialog(
+    title: const Text('Popup example'),
+    content: new Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text("Hello"),
+      ],
+    ),
+    actions: <Widget>[
+      new FlatButton(
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
+        textColor: Theme.of(context).primaryColor,
+        child: const Text('Close'),
+      ),
+    ],
   );
 }
 

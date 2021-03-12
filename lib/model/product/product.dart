@@ -50,13 +50,13 @@ class Data {
   });
 
   int totalItems;
-  List<Row> rows;
+  List<ProductRow> rows;
   int totalPages;
   int currentPage;
 
   factory Data.fromJson(Map<String, dynamic> json) => Data(
     totalItems: json["totalItems"],
-    rows: List<Row>.from(json["rows"].map((x) => Row.fromJson(x))),
+    rows: List<ProductRow>.from(json["rows"].map((x) => ProductRow.fromJson(x))),
     totalPages: json["totalPages"],
     currentPage: json["currentPage"],
   );
@@ -69,8 +69,8 @@ class Data {
   };
 }
 
-class Row {
-  Row({
+class ProductRow {
+  ProductRow({
     this.id,
     this.nameProduct,
     this.descriptionsProduct,
@@ -96,7 +96,7 @@ class Row {
   String updatedAt;
   dynamic deletedAt;
 
-  factory Row.fromJson(Map<String, dynamic> json) => Row(
+  factory ProductRow.fromJson(Map<String, dynamic> json) => ProductRow(
     id: json["id"],
     nameProduct: json["nameProduct"],
     descriptionsProduct: json["descriptionsProduct"],
